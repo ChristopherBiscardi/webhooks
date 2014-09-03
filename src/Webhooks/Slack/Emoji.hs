@@ -1,4 +1,4 @@
-module Emoji
+module Webhooks.Slack.Emoji
        (EMOJI) where
 
 -- | EIGHTBALL must be `:8ball:` when sent to Slack

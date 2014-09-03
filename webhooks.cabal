@@ -18,7 +18,8 @@ cabal-version:       >=1.10
 
 library
   exposed-modules:
-    Webhooks.Slack.Types
+    Webhooks.Slack.Types,
+    Webhooks.Slack.Emoji
   -- other-modules:       
   -- other-extensions:    
   build-depends:       base >=4.7 && <4.8
