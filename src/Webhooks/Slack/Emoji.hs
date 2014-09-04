@@ -1,5 +1,18 @@
+{-# LANGUAGE OverloadedStrings #-}
 module Webhooks.Slack.Emoji
        (EMOJI(..)) where
+
+import Data.Aeson
+import Data.Text (Text)
+import qualified Data.Text as T
+import Control.Applicative (pure)
+
+instance ToJSON EMOJI where
+  toJSON (EIGHTBALL) = String $ toEmoji "8ball"
+  toJSON x = (String . toEmoji . T.toLower . T.pack . show) x
+
+toEmoji :: Text -> Text
+toEmoji = T.append ":" . flip T.append ":"
 
 -- | EIGHTBALL must be `:8ball:` when sent to Slack
 --
