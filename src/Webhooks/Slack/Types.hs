@@ -1,29 +1,34 @@
 module Webhooks.Slack.Types
-       (FromSlack
-       ,ToSlack
-       ,Token
+       (--FromSlack
+      ToSlack(..)
+      , Channel(..)
+      , EMOJI(..)
+      , BotName(..)
+      , Icon(..)
+       ,Token(..)
        ) where
 
 import           Webhooks.Slack.Emoji
+import           Data.Text (Text)
 
 -- | Username can be anything
-type Username = Text
+newtype BotName = BotName Text deriving Show
 
 -- | Channel is `#mychan` or `@user`
 --
 -- In the future can be:
 -- data Channel = HashChannel | DirectMessage
-type Channel = Text
+newtype Channel = Channel Text deriving Show
 
 -- | meh
-type URL = Text
+newtype Url = Url Text deriving Show
 
-data Icon = URL | Emoji
+data Icon = Icon Url | Emoji EMOJI deriving Show
 
 data ToSlack = ToSlack { text     :: Text
                        , channel  :: Maybe Channel
-                       , username :: Maybe Username
-                       , icon     :: Maybe Icon }
+                       , username :: Maybe BotName
+                       , icon     :: Maybe Icon } deriving Show
 
 -- | Slack Token
-data Token = Text
+newtype Token = Token Text deriving Show

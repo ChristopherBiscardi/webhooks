@@ -1,5 +1,5 @@
 module Webhooks.Slack.Emoji
-       (EMOJI) where
+       (EMOJI(..)) where
 
 -- | EIGHTBALL must be `:8ball:` when sent to Slack
 --
@@ -595,5 +595,5 @@ data EMOJI = GRINNING
            |JP
            |KR
            |RU
-           |US
+           |US deriving Show
 
