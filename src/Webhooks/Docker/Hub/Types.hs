@@ -7,7 +7,7 @@ module Webhooks.Docker.Hub.Types
   , Username(..)) where
 
 import Data.Text (Text)
-import Data.Time (UTCTime)
+--import Data.Time (UTCTime)
 import Data.Aeson
 import Control.Applicative ((<$>),(<*>))
 
@@ -25,7 +25,7 @@ instance FromJSON FromHub where
 newtype Username = Username Text deriving (Show, FromJSON)
 
 data PushData = PushData
-  { pushed_at :: UTCTime
+  { pushed_at :: Int --UTCTime
   , images :: [Text]
   , pusher :: Username }
 
@@ -48,7 +48,7 @@ data Repository = Repository
   , namespace :: Text
   , star_count :: Int
   , comment_count :: Int
-  , date_created :: UTCTime
+  , date_created :: Int --UTCTime
   , dockerfile :: Text
   , repo_name :: Text }
 
