@@ -23,9 +23,11 @@ library
     Webhooks.Docker.Hub.Types
   -- other-modules:       
   -- other-extensions:    
-  build-depends:       base  >= 4.7      && <4.8,
+  build-depends:       base  >= 4.7      && <4.5,
                        text  >= 1.1.1.3,
                        aeson >= 0.7.0.4,
                        time  >= 1.4.2
   hs-source-dirs:      src
+  -- hs-source-dirs:      
+>>>>>>> upgrade base
   default-language:    Haskell2010
